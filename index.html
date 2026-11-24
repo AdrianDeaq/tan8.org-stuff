@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Portal - Danh Sách Dự Án</title>
+    <title>Đồ đạc của tân</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,10 +13,13 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            /* Đặt ảnh nền và phủ một lớp tối mờ 45% để dễ đọc chữ */
+            background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), 
+                        url('bg.jpg') center/cover no-repeat fixed;
             color: #f8fafc;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -25,39 +28,47 @@
         .container {
             width: 100%;
             max-width: 480px;
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(15, 23, 42, 0.45);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 24px;
             padding: 40px 28px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
             text-align: center;
         }
 
         .avatar {
-            width: 84px;
-            height: 84px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            width: 92px;
+            height: 92px;
             border-radius: 50%;
             margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            overflow: hidden;
+            border: 3px solid #3b82f6;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+            background: #1e293b;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         p.subtitle {
-            color: #94a3b8;
+            color: #e2e8f0;
             font-size: 14px;
             margin-bottom: 32px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         .links-wrapper {
@@ -70,8 +81,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             padding: 18px 22px;
             border-radius: 16px;
             text-decoration: none;
@@ -82,9 +93,9 @@
 
         .link-card:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #3b82f6;
-            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.25);
+            background: rgba(255, 255, 255, 0.16);
+            border-color: #60a5fa;
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.35);
         }
 
         .link-info {
@@ -100,39 +111,42 @@
 
         .link-desc {
             font-size: 12px;
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         .arrow {
             font-size: 18px;
-            color: #64748b;
+            color: #e2e8f0;
             transition: transform 0.25s ease, color 0.25s ease;
         }
 
         .link-card:hover .arrow {
             transform: translateX(4px);
-            color: #3b82f6;
+            color: #60a5fa;
         }
 
         footer {
-            margin-top: 32px;
+            margin-top: 24px;
             font-size: 12px;
-            color: #64748b;
+            color: #e2e8f0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="avatar">🎮</div>
-        <h1>Cổng Trò Chơi</h1>
+        <div class="avatar">
+            <img src="avatar.jpg" alt="Avatar của Tân">
+        </div>
+        <h1>Đồ chơi của Tân</h1>
         <p class="subtitle">Chọn dự án bên dưới để bắt đầu trải nghiệm</p>
 
         <div class="links-wrapper">
             <!-- Link 1 -->
             <a href="https://tan-gioi-dau-truong.onrender.com/" target="_blank" rel="noopener noreferrer" class="link-card">
                 <div class="link-info">
-                    <span class="link-title">⚔️ Tân Giới Đấu Trường</span>
+                    <span class="link-title">Tân Giới Đấu Trường</span>
                     <span class="link-desc">tan-gioi-dau-truong.onrender.com</span>
                 </div>
                 <span class="arrow">→</span>
@@ -141,7 +155,7 @@
             <!-- Link 2 -->
             <a href="https://tantowerdefense.itch.io/ttd" target="_blank" rel="noopener noreferrer" class="link-card">
                 <div class="link-info">
-                    <span class="link-title">🏰 Tan Tower Defense (TTD)</span>
+                    <span class="link-title">Tan Tower Defense (mặt lệnh mở: ilovengoctan )</span>
                     <span class="link-desc">tantowerdefense.itch.io/ttd</span>
                 </div>
                 <span class="arrow">→</span>
@@ -150,17 +164,17 @@
             <!-- Link 3 -->
             <a href="https://phamthanhan1612.itch.io/test" target="_blank" rel="noopener noreferrer" class="link-card">
                 <div class="link-info">
-                    <span class="link-title">🧪 Phiên Bản Thử Nghiệm (Test)</span>
+                    <span class="link-title">KingdomClash (mặt lệnh mở: 10a2hsgs )</span>
                     <span class="link-desc">phamthanhan1612.itch.io/test</span>
                 </div>
                 <span class="arrow">→</span>
             </a>
         </div>
-
-        <footer>
-            &copy; 2026 Game Portal
-        </footer>
     </div>
+
+    <footer>
+        &copy; 2026 Tân
+    </footer>
 
 </body>
 </html>
